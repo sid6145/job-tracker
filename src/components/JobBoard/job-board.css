@@ -1,0 +1,31 @@
+.jobBoardRoot {
+    background-color: rgb(54, 54, 218);
+    display: flex;
+    gap: 15px;
+    height: 600px;
+}
+
+.jobBoardRoot div {
+    flex: 1;
+    text-align: center;
+    margin-top: 10px;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 6px; /* Slim scrollbar */
+    height: 6px; /* For horizontal scrollbars */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; /* No background */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(100, 100, 100, 0.3); /* Subtle gray scrollbar */
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 100, 100, 0.5); /* Darker on hover */
+  }

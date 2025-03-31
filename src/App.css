@@ -1,0 +1,17 @@
+.appRoot {
+  padding: 10px;
+  position: relative;
+}
+
+.appRoot .appTitle {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.appRoot .addNewJobBtn {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}

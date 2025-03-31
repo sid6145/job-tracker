@@ -1,6 +1,8 @@
 .appRoot {
   padding: 10px;
-  position: relative;
+  height: 100vh;
+  padding-bottom: 30px;
+  background: linear-gradient(135deg, #6dd5ed, #2193b0) !important; /* Example background gradient */
 }
 
 .appRoot .appTitle {
@@ -8,10 +10,32 @@
   font-size: 1.5rem;
   margin-bottom: 15px;
   margin-top: 0;
+  font-weight: bold;
+  color: #333333;
+}
+
+.appRoot .clearJobsBtn .addNewJobBtn {
+  background: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(6px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
 }
 
 .appRoot .addNewJobBtn {
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
+  right: 190px; 
+  background-color: #2196F3 !important;
+}
+
+.appRoot .clearJobsBtn {
+  position: absolute;
+  bottom: 30px;
   right: 40px;
+  background-color: #F44336 !important;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
 }

@@ -1,5 +1,9 @@
 .cardRoot {
-    box-shadow: rgba(0, 0, 0, 0.1) !important;
+    background: rgba(255, 255, 255, 0.15) !important; /* Slightly different glass shade */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
     border-radius: 10px !important;
-    max-width: 450px !important;
+    color:#333333 !important; 
+    cursor: pointer;
 }

@@ -14,7 +14,6 @@ const JobBoard = () => {
 
     const moveJob = (id: string, toColumn: string) => {
         dispatch(updateJobColumn({ id, column: toColumn.toLowerCase() }))
-        console.log("id::>",id)
     }
 
     const Column = ({ column }: { column: string }) => {
@@ -30,12 +29,12 @@ const JobBoard = () => {
             <div
                 ref={drop as any}   
                 style={{
-                    backgroundColor: isOver ? '#f0f0f0' : 'transparent',
+                    backgroundColor: isOver ? 'rgba(255, 255, 255, 0.56)' : 'transparent',
                     padding: '1rem',
                     position: 'relative'
                 }}
             >
-                <Typography className='columnHeading'>{column}</Typography>
+                <Typography sx={{fontWeight: 'bold'}} variant='h6' className='columnHeading'>{column}</Typography>
                 <div className='jobContainer'>
                     {jobs.map((job, index) => {
                         if (job.col === column.toLowerCase()) {
@@ -57,8 +56,14 @@ const JobBoard = () => {
         )
     }
 
+    if(!jobs.length) {
+        return <Paper className='jobBoardRoot' elevation={10}>
+            <Typography variant='h5' alignSelf={'center'} sx={{margin: 'auto'}}>Add a job to showcase it on the board.</Typography>
+        </Paper>
+    }
+
     return (
-        <Paper elevation={10} className='jobBoardRoot' style={{display: 'flex', gap: '1rem' }}>
+        <Paper elevation={4} className='jobBoardRoot' style={{display: 'flex', gap: '1rem' }}>
             {columns.map((item, index) => (
                 <Column key={`col-${index}`} column={item} />
             ))}

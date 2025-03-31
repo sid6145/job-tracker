@@ -21,9 +21,16 @@ export const jobSlice = createSlice({
         job.col = action.payload.column;
       }
     },
+    deleteJob: (state, action) => {
+      const updatedJobs = state.jobs.filter((job) => job.id !== action.payload);
+      state.jobs = updatedJobs
+    },
+    clearBoard: (state) => {
+      state.jobs = []
+    }
   },
 });
 
-export const { addJob, updateJobColumn } = jobSlice.actions;
+export const { addJob, updateJobColumn,deleteJob,clearBoard } = jobSlice.actions;
 
 export default jobSlice.reducer;

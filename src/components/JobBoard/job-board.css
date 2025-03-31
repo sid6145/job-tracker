@@ -1,9 +1,13 @@
 .jobBoardRoot {
     display: flex;
     gap: 15px;
-    height: 650px;
-    background-color: #F4F6F8 !important;
-}
+    height: calc(100vh - 5vh);
+    background: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; 
+    border-radius: 20px !important;
+  }
 
 .columnHeader {
     position: sticky;

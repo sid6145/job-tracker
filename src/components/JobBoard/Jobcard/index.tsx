@@ -15,7 +15,7 @@ const ItemType = 'JOBCARD'
 const Jobcard = (props: JobcardProps) => {
     const { title, company, sourceLink, id, column } = props
 
-    const [{ isDragging }, drag] = useDrag(() => ({
+    const [drag] = useDrag(() => ({
         type: ItemType,
         item: { id, column },
         collect: (monitor) => ({

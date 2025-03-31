@@ -1,6 +1,5 @@
-.jobCardRoot {
-    padding: 10px;
-    height: 300p;
-    border-radius: 10px;
-    background-color: red;
+.cardRoot {
+    box-shadow: rgba(0, 0, 0, 0.1) !important;
+    border-radius: 10px !important;
+    max-width: 450px !important;
 }

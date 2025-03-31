@@ -1,15 +1,25 @@
 .jobBoardRoot {
-    background-color: rgb(54, 54, 218);
     display: flex;
     gap: 15px;
-    height: 600px;
+    height: 650px;
+    background-color: #F4F6F8 !important;
+}
+
+.columnHeader {
+    position: sticky;
+}
+
+.jobContainer {
+    height: 560px;
+    padding: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .jobBoardRoot div {
     flex: 1;
     text-align: center;
     margin-top: 10px;
-    overflow-y: auto;
 }
 
 ::-webkit-scrollbar {

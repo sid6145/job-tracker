@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import './job-board.css'
 import { useAppSelector, useAppDispatch } from '../../hooks';
 import Jobcard from './Jobcard';
@@ -32,35 +32,37 @@ const JobBoard = () => {
                 style={{
                     backgroundColor: isOver ? '#f0f0f0' : 'transparent',
                     padding: '1rem',
-                    minHeight: '200px'
+                    position: 'relative'
                 }}
             >
-                <Typography>{column}</Typography>
-                {jobs.map((job, index) => {
-                    if (job.col === column.toLowerCase()) {
-                        return (
-                            <Jobcard
-                                key={`job-${index}`}
-                                id={job.id}
-                                title={job.jobTitle}
-                                company={job.company}
-                                sourceLink={job.sourceLink}
-                                column={column.toLowerCase()}
-                            />
-                        )
-                    }
-                    return null
-                })}
+                <Typography className='columnHeading'>{column}</Typography>
+                <div className='jobContainer'>
+                    {jobs.map((job, index) => {
+                        if (job.col === column.toLowerCase()) {
+                            return (
+                                <Jobcard
+                                    key={`job-${index}`}
+                                    id={job.id}
+                                    title={job.jobTitle}
+                                    company={job.company}
+                                    sourceLink={job.sourceLink}
+                                    column={column.toLowerCase()}
+                                />
+                            )
+                        }
+                        return null
+                    })}
+                </div>
             </div>
         )
     }
 
     return (
-        <div className='jobBoardRoot' style={{ display: 'flex', gap: '1rem' }}>
+        <Paper elevation={10} className='jobBoardRoot' style={{display: 'flex', gap: '1rem' }}>
             {columns.map((item, index) => (
                 <Column key={`col-${index}`} column={item} />
             ))}
-        </div>
+        </Paper>
     )
 }
 

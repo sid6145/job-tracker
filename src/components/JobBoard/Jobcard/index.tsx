@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Button, Card, CardActions, CardContent, Typography } from '@mui/material'
 import './job-card.css'
 import { useDrag } from 'react-dnd'
 
@@ -7,13 +7,13 @@ type JobcardProps = {
     company: string,
     sourceLink: string,
     id: string,
-    column: string 
+    column: string
 }
 
 const ItemType = 'JOBCARD'
 
 const Jobcard = (props: JobcardProps) => {
-    const {title, company, sourceLink, id, column} = props
+    const { title, company, sourceLink, id, column } = props
 
     const [{ isDragging }, drag] = useDrag(() => ({
         type: ItemType,
@@ -23,18 +23,38 @@ const Jobcard = (props: JobcardProps) => {
         })
     }))
 
-    
 
-  return (
-      <div ref={drag as any} style={{
-          opacity: isDragging ? 0.5 : 1,
-          cursor: 'move'
-      }} className='jobCardRoot'>
-          <Typography>{title}</Typography>
-          <Typography>{company}</Typography>
-          <a target='blank' href={sourceLink}>Link</a>
-      </div>
-  )
+
+    return (
+        <Card
+            ref={drag as any}
+            elevation={3}
+            className='cardRoot'
+        >
+            <CardContent sx={{
+                flexGrow: 1,
+                overflowY: 'auto',
+                maxHeight: '150px',
+                whiteSpace: 'normal',
+                wordBreak: 'break-word',
+            }}>
+                <Typography align='left' variant='h5'>
+                    {title}
+                </Typography>
+                <Typography align='left' variant="body2" color="text.secondary">
+                    {company}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button href={sourceLink} target='_blank' variant='contained' color="primary">
+                    View Job
+                </Button>
+                <Button href={sourceLink} target='_blank' variant='outlined' color="primary">
+                    Delete Job
+                </Button>
+            </CardActions>
+        </Card>
+    )
 }
 
 export default Jobcard
